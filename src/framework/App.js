@@ -109,8 +109,12 @@ class App extends BaseComponent {
       this.setState({ section: 'Landing', isLoaded: true });
 
       // Add any "WebGL components" here...
-      webgl.scene.add(new Heart(this.state.theme, -3, 3.5));
-      webgl.scene.add(new TextContainer(this.state.theme, this.state.message));
+      const heartForSweetHeart = new Heart(this.state.theme, -3, 3.5)
+      const messageContainerForSweetoo = new TextContainer(this.state.theme, this.state.message);
+      messageContainerForSweetoo.scale.set(0.70, 0.70, 0.70); // Reduces size to 50%
+      
+      webgl.scene.add(heartForSweetHeart);
+      webgl.scene.add(messageContainerForSweetoo);
       webgl.scene.add(new TriangleFetti());
     });
   }

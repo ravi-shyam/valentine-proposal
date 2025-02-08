@@ -13,12 +13,12 @@ class Landing extends BaseComponent {
   constructor (props) {
     super(props);
   }
-
+  
   animateIn () {
     this.logo.animateIn({ delay: 4 });
     this.muteButton.animateIn({ delay: 4.2 });
     this.shuffleButton.animateIn({ delay: 4.3 });
-    this.shareButton.animateIn({ delay: 4.4 });
+    // this.shareButton.animateIn({ delay: 4.4 });
   }
 
   animateOut () {
@@ -39,11 +39,11 @@ class Landing extends BaseComponent {
 
   handleShare () {
     this.props.updateContent('Share');
-    ReactGA.event({
-      category: 'button',
-      action: 'click',
-      label: 'spread the love'
-    });
+    // ReactGA.event({
+    //   category: 'button',
+    //   action: 'click',
+    //   label: 'spread the love'
+    // });
   }
 
   render () {
@@ -69,14 +69,14 @@ class Landing extends BaseComponent {
               icon='random'
               extraClasses={{primary: true}}
             />
-            <Button
+            {/* <Button
               onClick={() => this.handleShare()}
               ref={ c => { this.shareButton = c; } }
-              icon='share'
+              icon='heart'
               expanded
             >
-              Spread the love
-            </Button>
+              {'  '}From R
+            </Button> */}
           </div>
         </Controls>
       </div>
